@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+        <h1>{{ title }}</h1>
+        <a href="/add_news">Add Notes</a>
+	{% for item in news %}
+    		<div class="alert alert-dark" role="alert">
+        		<h2>{{item[0]}}</h2>
+        		<div>{{item[1]}}</div>
+        		<a href="/delete_news/{{item[2]}}">Delete Notes</a>
+    		</div>
+	{% endfor %}
+{% endblock %}
